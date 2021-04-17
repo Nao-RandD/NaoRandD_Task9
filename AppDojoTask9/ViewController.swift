@@ -9,14 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var label: UILabel!
+
+    @IBAction func input(segue: UIStoryboardSegue) {
+        let input = segue.source as? ModalViewController
+        label.text = input?.prefectuer
     }
 
-    @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+    @IBAction func exit(segue:UIStoryboardSegue) {
     }
-
 }
-

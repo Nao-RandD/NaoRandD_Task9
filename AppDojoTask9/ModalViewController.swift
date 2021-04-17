@@ -8,10 +8,27 @@
 import UIKit
 
 class ModalViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+    private(set) var prefectuer = ""
+
+    @IBAction func tokyoAction(_ sender: Any) {
+        performUnwindSegue(prefecture: "東京", sender: sender)
     }
 
-    
+    @IBAction func kanagawaAction(_ sender: Any) {
+        performUnwindSegue(prefecture: "神奈川", sender: sender)
+    }
+
+    @IBAction func saitamaAction(_ sender: Any) {
+        performUnwindSegue(prefecture: "埼玉", sender: sender)
+    }
+
+    @IBAction func chibaAction(_ sender: Any) {
+        performUnwindSegue(prefecture: "千葉", sender: sender)
+    }
+
+    private func performUnwindSegue(prefecture: String, sender: Any) {
+        self.prefectuer = prefecture
+        performSegue(withIdentifier: "segue", sender: sender)
+    }
 }
