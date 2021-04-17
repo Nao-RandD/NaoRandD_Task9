@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gh2-nE-KlK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="都道府県" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5i-at-6bZ">
-                                <rect key="frame" x="40" y="118" width="90" height="24"/>
+                                <rect key="frame" x="40" y="74" width="90" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="Vvj-HG-Bfo"/>
                                 </constraints>
@@ -26,7 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未選択" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gz-07-lxf">
-                                <rect key="frame" x="160" y="118" width="80" height="24"/>
+                                <rect key="frame" x="160" y="74" width="80" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="yml-dG-glF"/>
                                 </constraints>
@@ -35,14 +35,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggU-u8-8Td">
-                                <rect key="frame" x="290" y="112" width="50" height="36"/>
+                                <rect key="frame" x="290" y="68" width="50" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="v2V-dR-zAw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="入力"/>
                                 <connections>
-                                    <segue destination="lRL-VM-2HG" kind="presentation" id="o5F-iq-V4c"/>
+                                    <segue destination="hOc-Aw-r4d" kind="presentation" id="SH4-wa-p9z"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -59,52 +59,50 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LSI-lt-SY7"/>
+                    <connections>
+                        <outlet property="label" destination="9Gz-07-lxf" id="HUr-gs-LoB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050.7246376811595" y="123.88392857142857"/>
+            <point key="canvasLocation" x="1151" y="124"/>
         </scene>
-        <!--View Controller-->
+        <!--Modal View Controller-->
         <scene sceneID="JeS-GV-fvE">
             <objects>
-                <viewController id="lRL-VM-2HG" sceneMemberID="viewController">
+                <viewController id="lRL-VM-2HG" customClass="ModalViewController" customModule="AppDojoTask9" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ISn-lm-9DS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxk-mZ-mWB">
-                                <rect key="frame" x="176" y="166" width="62" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxk-mZ-mWB">
+                                <rect key="frame" x="176" y="167" width="62" height="30"/>
                                 <state key="normal" title="神奈川県"/>
+                                <connections>
+                                    <action selector="kanagawaAction:" destination="lRL-VM-2HG" eventType="touchUpInside" id="RAo-6D-AsD"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2HV-UK-Hcr">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2HV-UK-Hcr">
                                 <rect key="frame" x="184" y="112" width="46" height="30"/>
                                 <state key="normal" title="東京都"/>
+                                <connections>
+                                    <action selector="tokyoAction:" destination="lRL-VM-2HG" eventType="touchUpInside" id="Apv-II-JT0"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z32-k5-STh">
-                                <rect key="frame" x="184" y="221" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z32-k5-STh">
+                                <rect key="frame" x="184" y="222" width="46" height="30"/>
                                 <state key="normal" title="埼玉県"/>
+                                <connections>
+                                    <action selector="saitamaAction:" destination="lRL-VM-2HG" eventType="touchUpInside" id="R6c-Bz-xVy"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcK-gT-rku">
-                                <rect key="frame" x="184" y="271" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcK-gT-rku">
+                                <rect key="frame" x="184" y="277" width="46" height="30"/>
                                 <state key="normal" title="千葉県"/>
+                                <connections>
+                                    <action selector="chibaAction:" destination="lRL-VM-2HG" eventType="touchUpInside" id="ir4-JR-n5I"/>
+                                </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IZG-Tc-1WD">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="I5e-jA-Y3g">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="PWY-zA-r0G">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="hOT-zd-byP">
-                                                <rect key="frame" x="20" y="13" width="92" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Cancel"/>
-                                            </button>
-                                            <connections>
-                                                <action selector="cancelTapped:" destination="u9t-TT-spG" id="dp7-O0-Tew"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W6Y-MO-yGl"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -112,36 +110,52 @@
                             <constraint firstItem="Qxk-mZ-mWB" firstAttribute="centerX" secondItem="ISn-lm-9DS" secondAttribute="centerX" id="6AG-Mf-UfU"/>
                             <constraint firstItem="2HV-UK-Hcr" firstAttribute="centerX" secondItem="ISn-lm-9DS" secondAttribute="centerX" id="MvB-ch-j2B"/>
                             <constraint firstItem="z32-k5-STh" firstAttribute="top" secondItem="Qxk-mZ-mWB" secondAttribute="bottom" constant="25" id="PRN-dq-vFi"/>
-                            <constraint firstItem="2HV-UK-Hcr" firstAttribute="top" secondItem="IZG-Tc-1WD" secondAttribute="bottom" constant="68" id="UAQ-0G-0ts"/>
                             <constraint firstItem="rcK-gT-rku" firstAttribute="top" secondItem="z32-k5-STh" secondAttribute="bottom" constant="25" id="Wtv-qb-Bjv"/>
+                            <constraint firstItem="2HV-UK-Hcr" firstAttribute="top" secondItem="W6Y-MO-yGl" secondAttribute="top" constant="56" id="ZrK-O5-ncf"/>
                             <constraint firstItem="rcK-gT-rku" firstAttribute="centerX" secondItem="ISn-lm-9DS" secondAttribute="centerX" id="eEr-zC-HPz"/>
                             <constraint firstItem="Qxk-mZ-mWB" firstAttribute="top" secondItem="2HV-UK-Hcr" secondAttribute="bottom" constant="25" id="gUv-Je-Ze0"/>
                             <constraint firstItem="z32-k5-STh" firstAttribute="centerX" secondItem="ISn-lm-9DS" secondAttribute="centerX" id="mBS-vE-nQP"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="kQa-Ak-uP3">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="Mnc-yI-LbY"/>
+                        <barButtonItem key="leftBarButtonItem" id="sgZ-pw-v0m">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="rgQ-By-PWV">
+                                <rect key="frame" x="20" y="13" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="u9t-TT-spG" kind="unwind" unwindAction="exitWithSegue:" id="CcY-vK-62d"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="u9t-TT-spG" kind="unwind" identifier="segue" unwindAction="inputWithSegue:" id="K1M-md-0En"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SMQ-lU-euW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="u9t-TT-spG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2086.9565217391305" y="123.88392857142857"/>
+            <point key="canvasLocation" x="2997.1014492753625" y="123.88392857142857"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="9z0-BG-oA8">
+        <scene sceneID="fLP-MW-BTm">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gh2-nE-KlK" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hOc-Aw-r4d" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WN8-a6-yLR">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NbE-0A-xPl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8oP-U9-iE4"/>
+                        <segue destination="lRL-VM-2HG" kind="relationship" relationship="rootViewController" id="xkL-Lt-i9A"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NyS-1u-TY9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zDg-QH-Eu9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140.57971014492756" y="123.88392857142857"/>
+            <point key="canvasLocation" x="2086.9565217391305" y="123.88392857142857"/>
         </scene>
     </scenes>
     <resources>
