@@ -9,7 +9,7 @@ import UIKit
 
 class ModalViewController: UIViewController {
 
-    private(set) var prefectuer = ""
+    private(set) var prefecture = ""
 
     @IBAction func tokyoAction(_ sender: Any) {
         performUnwindSegue(prefecture: "東京", sender: sender)
@@ -28,7 +28,7 @@ class ModalViewController: UIViewController {
     }
 
     private func performUnwindSegue(prefecture: String, sender: Any) {
-        self.prefectuer = prefecture
+        self.prefecture = prefecture
         performSegue(withIdentifier: "segue", sender: sender)
     }
 }

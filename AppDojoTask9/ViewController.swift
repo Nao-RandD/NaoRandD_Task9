@@ -9,11 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet private weak var label: UILabel!
 
     @IBAction func input(segue: UIStoryboardSegue) {
         let input = segue.source as? ModalViewController
-        label.text = input?.prefectuer
+        label.text = input?.prefecture
     }
 
     @IBAction func exit(segue:UIStoryboardSegue) {
